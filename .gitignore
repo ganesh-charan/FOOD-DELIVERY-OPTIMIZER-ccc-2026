@@ -141,4 +141,3 @@ vite.config.ts.timestamp-*
 .vite/
 
 node_modules/
-.vscode/
