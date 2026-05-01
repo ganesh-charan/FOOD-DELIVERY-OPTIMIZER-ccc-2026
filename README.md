@@ -118,26 +118,32 @@ The application will be available at http://localhost:3000
 The C++ program receives the customer's location and the current positions of delivery agents. It runs Dijkstra's algorithm on a weighted graph to determine the shortest distance from each available agent to the customer. Agents marked unavailable are passed as -1 and skipped. The agent with the shortest path is selected for assignment.
 
 ## Order Flow
+
+```
 Order placed
 └── Agent available?
-├── Yes: Run Dijkstra, assign nearest agent
-└── No (both busy): Set status to "Waiting"
-Auto-assign when agent becomes idle
+
+    ├── Yes: Run Dijkstra, assign nearest agent
+    │
+    └── No (both busy): Set status to "Waiting"
+        └── Auto-assign when agent becomes idle
+
 Order delivered
 └── Update agent position to delivery location
 └── Set agent status to "idle"
 └── Check order queue and auto-assign if pending
+```
+
 ## Team
 
 | Roll Number    | Name                      |
 |----------------|---------------------------|
-| AP24110011704  | V N S Ganesh Charan Paturu |
 | AP24110011685  | Yashwanth Dogga           |
+| AP24110011704  | Paturu V N S Ganesh Charan|
+| AP24110011717  | B.Divya                   |
+| AP24110011721  | Likitha Reddy R           |
 | AP24110011724  | Kishor Gunithi            |
 | AP24110011729  | Anand Gokul Kota          |
-| AP24110011721  | Likhita Reddy R           |
-| AP24110011717  | Divya B                   |
 
 ## License
-
 ISC
