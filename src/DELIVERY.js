@@ -3,15 +3,15 @@ import { getQueue } from "./queue.js";
 
 export let guy1 = {
     position: 0,           
-    status: "in_delivery", 
-    currentOrderId: getQueue()[1].id,  // Bob Jones order
+    status: "idle", 
+    currentOrderId: null,
     lastDeliveryLocation: 0
 };
 
 export let guy2 = {
     position: 0,           
-    status: "in_delivery", 
-    currentOrderId: getQueue()[2].id,  // Charlie Brown order
+    status: "idle", 
+    currentOrderId: null,
     lastDeliveryLocation: 0
 };
 
