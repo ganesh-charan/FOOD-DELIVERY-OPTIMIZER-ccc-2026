@@ -14,18 +14,26 @@ Customers place orders through a user-friendly interface. Orders are queued and 
 - **Architecture:** MVC pattern with server-side rendering
 
 ## Project Structure
+## 📁 Project Structure
+```
 food-delivery-optimizer/
+│
 ├── src/
-│   ├── app.js              # Express server and route handlers
-│   ├── DELIVERY.js         # Delivery agent state management
-│   └── delivery.cpp        # Dijkstra algorithm implementation
+│   ├── app.js              # Express server + route handlers
+│   ├── DELIVERY.js        # Delivery agent state management
+│   └── delivery.cpp       # Dijkstra algorithm implementation
+│
 ├── views/
 │   └── operations/
-│       ├── customer.ejs    # Customer order interface
-│       └── delivery.ejs    # Delivery dashboard
-├── public/                 # Static assets (CSS, client-side JS)
-├── package.json
-└── .gitignore
+│       ├── customer.ejs   # Customer order interface
+│       └── delivery.ejs   # Delivery dashboard
+│
+├── public/                # Static assets (CSS, client-side JS)
+│
+├── package.json           # Project dependencies & scripts
+├── .gitignore             # Ignored files configuration
+```
+
 ## How It Works
 
 1. Customer places an order via the web interface.
@@ -118,26 +126,32 @@ The application will be available at http://localhost:3000
 The C++ program receives the customer's location and the current positions of delivery agents. It runs Dijkstra's algorithm on a weighted graph to determine the shortest distance from each available agent to the customer. Agents marked unavailable are passed as -1 and skipped. The agent with the shortest path is selected for assignment.
 
 ## Order Flow
+
+```
 Order placed
 └── Agent available?
-├── Yes: Run Dijkstra, assign nearest agent
-└── No (both busy): Set status to "Waiting"
-Auto-assign when agent becomes idle
+
+    ├── Yes: Run Dijkstra, assign nearest agent
+    │
+    └── No (both busy): Set status to "Waiting"
+        └── Auto-assign when agent becomes idle
+
 Order delivered
 └── Update agent position to delivery location
 └── Set agent status to "idle"
 └── Check order queue and auto-assign if pending
+```
+
 ## Team
 
 | Roll Number    | Name                      |
 |----------------|---------------------------|
-| AP24110011704  | V N S Ganesh Charan Paturu |
 | AP24110011685  | Yashwanth Dogga           |
+| AP24110011704  | Paturu V N S Ganesh Charan|
+| AP24110011717  | B.Divya                   |
+| AP24110011721  | Likitha Reddy R           |
 | AP24110011724  | Kishor Gunithi            |
 | AP24110011729  | Anand Gokul Kota          |
-| AP24110011721  | Likhita Reddy R           |
-| AP24110011717  | Divya B                   |
 
 ## License
-
 ISC
